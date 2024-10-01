@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Renewable Energy Source Predictor</h1>
+        <form id="energyForm">
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <div>
+                <label>
+                    <input type="checkbox" name="is_near_water">
+                    Is the location near water?
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="is_geothermal_region">
+                    Is the location in a geothermal region?
+                </label>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#energyForm').on('submit', function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+
+                $.post('/predict', formData, function(data) {
+                    $('#result').html('<h2>Predicted Energy Source: ' + data.energy_source + '</h2>');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
 
