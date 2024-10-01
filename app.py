@@ -3,8 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-# Replace with your OpenWeatherMap API key
-API_KEY = 'your_api_key'
+API_KEY = 'api_key'
 
 # Function to get weather data from OpenWeatherMap
 def get_weather_data(city):
@@ -40,10 +39,8 @@ def predict():
     is_near_water = request.form.get('is_near_water') == 'on'
     is_geothermal_region = request.form.get('is_geothermal_region') == 'on'
 
-    # Fetch weather data
     weather_data = get_weather_data(city)
 
-    # Predict energy source
     energy_source = predict_energy_source(weather_data, is_near_water, is_geothermal_region)
     
     return jsonify({'energy_source': energy_source})
