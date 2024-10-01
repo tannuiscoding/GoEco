@@ -1,22 +1,23 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import os
 
 app = Flask(__name__)
 
-API_KEY = 'api_key'
+API_KEY = os.getenv('WEATHERAPI_KEY')
 
-# Function to get weather data from OpenWeatherMap
+# Function to get weather data from WeatherAPI.com
 def get_weather_data(city):
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric'
+    url = f'http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}&aqi=no'
     response = requests.get(url)
     data = response.json()
     return data
 
 # Function to predict energy source
 def predict_energy_source(weather_data, is_near_water=False, is_geothermal_region=False):
-    wind_speed = weather_data['wind']['speed']
-    sunlight_hours = 6  # Assume a value or fetch from data
-    rainfall = weather_data.get('rain', {}).get('1h', 0)  # Get rainfall, if available
+    wind_speed = weather_data['current']['wind_kph'] * 0.27778  # Convert kph to m/s
+    sunlight_hours = 6  # Assume a value or fetch dynamically
+    rainfall = weather_data['current'].get('precip_mm', 0)  # Get rainfall in mm
 
     if sunlight_hours > 5:
         return "Solar Energy"
