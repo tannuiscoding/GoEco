@@ -9,25 +9,19 @@
 <body>
     <div class="container">
         <h1>Renewable Energy Source Predictor</h1>
-        <form id="energyForm">
-            <label for="city">Enter City:</label>
-            <input type="text" id="city" name="city" required>
+        <form method="POST" action="/predict">
+  <label for="city">Enter city:</label>
+  <input type="text" name="city" id="city" required>
+  
+  <label for="is_near_water">Near Water:</label>
+  <input type="checkbox" name="is_near_water" id="is_near_water">
+  
+  <label for="is_geothermal_region">Geothermal Region:</label>
+  <input type="checkbox" name="is_geothermal_region" id="is_geothermal_region">
 
-            <div>
-                <label>
-                    <input type="checkbox" name="is_near_water">
-                    Is the location near water?
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" name="is_geothermal_region">
-                    Is the location in a geothermal region?
-                </label>
-            </div>
+  <button type="submit">Predict Energy Source</button>
+</form>
 
-            <button type="submit">Predict</button>
-        </form>
 
         <div id="result"></div>
     </div>
