@@ -4,7 +4,6 @@ import os
 
 app = Flask(__name__)
 
-# Use your actual API key here or set it via environment variables.
 API_KEY = 'your_weatherapi_key'  # Replace with your actual WeatherAPI key
 
 # Function to get weather data from WeatherAPI.com
