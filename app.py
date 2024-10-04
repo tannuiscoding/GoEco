@@ -4,7 +4,6 @@ import os
 
 app = Flask(__name__)
 
-# Use your actual API key here or set it via environment variables.
 API_KEY = '57a709f613134439a7a144335240110'  # Replace with your actual WeatherAPI key
 
 # Function to get weather data from WeatherAPI.com
@@ -14,24 +13,28 @@ def get_weather_data(city):
     data = response.json()
     return data
 
+
 # Function to predict energy source
 def predict_energy_source(weather_data, sunshine_hours, is_near_water=False, is_geothermal_region=False):
     wind_speed = weather_data['current']['wind_kph'] * 0.27778  # Convert kph to m/s
     rainfall = weather_data['current'].get('precip_mm', 0)  # Get rainfall in mm
     condition = weather_data['current']['condition']['text']  # Weather condition
 
+    resources= []
+
     # Example logic to predict energy source based on weather conditions and sunshine hours
     if sunshine_hours > 5:
-        return "Solar Energy"
-    elif wind_speed > 10:
-        return "Wind Energy"
-    elif is_near_water:
-        return "Hydropower"
-    elif is_geothermal_region:
-        return "Geothermal Energy"
-    else:
-        return "No optimal renewable energy source found"
-
+        resources.append("Solar Energy")
+    if is_near_water:
+        resources.append(" Hydropower")
+    if is_geothermal_region:
+        resources.append(" Geothermal Energy")
+    if wind_speed > 4:
+        resources.append(" Wind Energy")
+    if(len(resources)==0):
+        return "No optimal energy source found"
+    
+    return resources
 
 @app.route('/')
 def index():
@@ -40,6 +43,7 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     city = request.form['city']
+    sunshine_hours = int(request.form['sunshine_hours']) 
     is_near_water = request.form.get('is_near_water') == 'on'
     is_geothermal_region = request.form.get('is_geothermal_region') == 'on'
 
@@ -47,9 +51,11 @@ def predict():
     weather_data = get_weather_data(city)
 
     # Predict the energy source based on the weather and geographical data
-    energy_source = predict_energy_source(weather_data, is_near_water, is_geothermal_region)
+    energy_source = predict_energy_source(weather_data, sunshine_hours, is_near_water, is_geothermal_region)
     
     return jsonify({'energy_source': energy_source})
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
