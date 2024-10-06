@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-API_KEY = '57a709f613134439a7a144335240110'  # Replace with your actual WeatherAPI key
+API_KEY = 'your api'  # Replace with your actual WeatherAPI key
 
 # Function to get weather data from WeatherAPI.com
 def get_weather_data(city):
