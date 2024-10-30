@@ -8,55 +8,69 @@
 **GoEco** is a web application that solves the issue of energy sources. This website is going to help people in finding which renewable energy source is best for their location.
 
 
-![GoEco](static/images/webpage.png)
+![GoEco](static/images/output.png)
 
 
 <!--line-->
 <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+
+### Features
+- Real-time weather data integration using the [WeatherAPI](https://www.weatherapi.com/) to assess conditions like temperature, wind speed, cloud cover, and rainfall.
+- Customized recommendations for renewable energy sources, including solar, wind, hydro, and geothermal, based on weather data and location attributes.
+- Intuitive user interface for entering location details and viewing recommendations.
+
 
 ## TechStack
 
-- **Frontend**: HTML, CSS
-- **Backend**: Python, Flask
-- **API**: weatherAPI
+- HTML
+- CSS
+- Python
+- Flask
+- WeatherAPI
 
 <!--line-->
 <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
-
-## Getting Started
-
-To set up and run the application locally, follow these steps:
+## Setup and Installation
 
 ### Prerequisites
+1. **Python 3.7+**
+2. **Flask**: Install Flask via `pip install Flask`
+3. **WeatherAPI Key**: Sign up for an API key at [WeatherAPI](https://www.weatherapi.com/) and set it as an environment variable (`WEATHER_API_KEY`).
 
-- Python 3.6 or later
-- Flask
-- Requests library
+### Installation Steps
 
-### Installation
-
-1. Clone the repository:
+1. Clone the repository
    ```bash
-   git clone https://github.com/<your-username>/GoEco.git
-   
+   git clone https://github.com/your-username/GoEco.git
    cd GoEco
 
-3. Install the required libraries:
+2. Install required packages
 	```bash
-	pip install flask requests
-	
-4. Obtain an API key from Hugging Face and replace your key here in app.py with your API key:
+   pip install -r./requirements.txt
+
+3. Set up the API Key
 	```bash
-	headers = {"Authorization": f"Bearer your_key_here"}
-	
-5. Run the application:
+	API_KEY = os.getenv("WEATHER_API_KEY", "YOUR_API_KEY")
+
+4. Run the Flask application
 	```bash
 	python app.py
-	
-6. Open a browser and navigate to http://127.0.0.1:5000 to access the application.
 
+5. Open your browser and go to http://127.0.0.1:5000 to access the application.
 
+## Usage
 
-<!--line-->
-<img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
+1. Enter Location and Preferences
+   - On the homepage, enter the city name and sunshine hours.
+   - Optionally, check if the location is near a water source or in a geothermal region.
+
+2. Submit Form
+   - Click "Find Renewable Energy Sources" to get recommendations.
+
+3. View Results
+   - The application will display current weather data and recommended renewable energy sources with efficiency estimates.
+
+### License
+
+This project is licensed under the MIT License.
