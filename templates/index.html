@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoEco</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoEco</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 </head>
-<body class="bg-cover bg-center bg-fixed" style="background-image: url('static/styles/images/BG.jpg');">
-  <header class="bg-green-700 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <img src="static/styles/images/logo.png" class="h-12">
-      <ul class="flex space-x-4 text-white">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="about.html" class="hover:underline">About</a></li>
-        <li><a href="#" class="hover:underline">Work</a></li>
-        <li><a href="team.html" class="hover:underline">Team</a></li>
-      </ul>
-    </div>
-  </header>
+<body background="static/styles/images/BG.jpg">
+    <header>
+        <img src="static/styles/images/logo.png" class="logo">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="team.html">Team</a></li>
 
-  <section id="title" class="text-center mt-10">
-    <h1 class="text-5xl font-bold text-white"><u>Renewable</u><br><u>Energy Source Recommender</u></h1>
-  </section>
+        </ul>
+    </header>
 
-  <section class="hero mt-10">
-    <div class="container mx-auto bg-white bg-opacity-90 p-8 rounded-xl shadow-lg">
-      <h2 class="text-2xl font-bold mb-6">Get Your Energy Source Today</h2>
-      <form id="energyForm" class="space-y-4">
-        <div class="form-group">
-          <input type="text" placeholder="Enter City Name" class="form-control w-full p-2 border rounded" id="city" name="city" required>
-        </div>
-        <div class="form-group">
-          <input type="number" placeholder="Enter Sunshine Hours" class="form-control w-full p-2 border rounded" id="sunshine_hours" name="sunshine_hours" required>
-        </div>
-        <div class="form-check flex items-center space-x-2">
-          <input type="checkbox" class="form-check-input" id="is_near_water" name="is_near_water">
-          <label class="form-check-label" for="is_near_water">Near Water Source</label>
-        </div>
-        <div class="form-check flex items-center space-x-2">
-          <input type="checkbox" class="form-check-input" id="is_geothermal_region" name="is_geothermal_region">
-          <label class="form-check-label" for="is_geothermal_region">In Geothermal Region</label>
-        </div>
-        <button type="submit" class="btn btn-primary bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">Find It</button>
-      </form>
-      <div id="result" class="mt-6 text-lg font-bold text-green-800"></div>
-    </div>
-  </section>
+    <section id="title">
+        <h1><u>Renewable</u><br><u>Energy Source Recommender</u></h1>
+    </section>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#energyForm').on('submit', function(event) {
-        event.preventDefault();
-        var formData = $(this).serialize();
-        $.post('/predict', formData, function(data) {
-          $('#result').html('<h2>Predicted Energy Source: ' + data.energy_source + '</h2>');
+    <section class="hero">
+        <div class="container">
+            <h2>Get Your Energy Source Today</h2>
+            <form id="energyForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter City Name" class="form-control" id="city" name="city" required>            </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Enter Sunshine Hours" class="form-control" id="sunshine_hours" name="sunshine_hours" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="is_near_water" name="is_near_water">
+                    <label class="form-check-label" for="is_near_water">Near Water Source</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="is_geothermal_region" name="is_geothermal_region">
+                    <label class="form-check-label" for="is_geothermal_region">In Geothermal Region</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Find It</button>
+            </form>
+    
+    
+            <div id="result"></div>
+        </div>
+
+    </section>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#energyForm').on('submit', function(event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+
+                $.post('/predict', formData, function(data) {
+                    $('#result').html('<h2>Predicted Energy Source: ' + data.energy_source + '</h2>');
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
+    
 </body>
 </html>
-
- 
