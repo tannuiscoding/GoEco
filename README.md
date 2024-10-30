@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="static/images/logo.png" alt="Logo" width="150px" height="150px" style="border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" />
 </p>
@@ -59,4 +60,3 @@ To set up and run the application locally, follow these steps:
 
 <!--line-->
 <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
-
