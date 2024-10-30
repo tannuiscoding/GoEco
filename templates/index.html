@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,5 +65,171 @@
         });
     </script>
     
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoEco - Renewable Energy Recommender</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <!-- <style>
+      
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            header ul {
+                gap: 20px;
+            }
+
+            #title {
+                padding: 120px 20px 30px;
+            }
+
+            #title h1 {
+                font-size: 2em;
+            }
+
+            #energyForm {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <header>
+        <img src="static/images/logo.png" class="logo">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="{{ url_for('static',filename='about.html') }}">About</a></li>
+            <li><a href="{{ url_for('static',filename='work.html') }}">Work</a></li>
+            <li><a href="{{ url_for('static',filename='team.html') }}">Team</a></li>
+
+        </ul>
+    </header>
+
+    <section id="title">
+        <h1><u>Renewable</u><br><u>Energy Source Recommender</u></h1>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Get Your Energy Source Today</h2>
+            <form id="energyForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Enter City Name" class="form-control" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" placeholder="Enter Sunshine Hours (0-24)" class="form-control" id="sunshine_hours" name="sunshine_hours" min="0" max="24" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="is_near_water" name="is_near_water">
+                    <label class="form-check-label" for="is_near_water">Near Water Source</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="is_geothermal_region" name="is_geothermal_region">
+                    <label class="form-check-label" for="is_geothermal_region">In Geothermal Region</label>
+                </div>
+                <button type="submit" class="btn">Find Renewable Energy Sources</button>
+            </form>
+
+            <div class="error-message"></div>
+            
+            <div class="results-container">
+                <h3>Current Weather Conditions</h3>
+                <div class="weather-info">
+                    <div class="weather-card">
+                        <i class="fas fa-thermometer-half"></i>
+                        <h4>Temperature</h4>
+                        <p class="temperature">--°C</p>
+                    </div>
+                    <div class="weather-card">
+                        <i class="fas fa-wind"></i>
+                        <h4>Wind Speed</h4>
+                        <p class="wind-speed">-- m/s</p>
+                    </div>
+                    <div class="weather-card">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Cloud Cover</h4>
+                        <p class="cloud-cover">--%</p>
+                    </div>
+                    <div class="weather-card">
+                        <i class="fas fa-sun"></i>
+                        <h4>Condition</h4>
+                        <p class="condition">--</p>
+                    </div>
+                </div>
+
+                <h3>Recommended Energy Sources</h3>
+                <div class="energy-sources"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#energyForm').on('submit', function(event) {
+                event.preventDefault();
+                const formData = $(this).serialize();
+                
+                // Clear previous results and show loading state
+                $('.error-message').hide();
+                $('.results-container').hide();
+                $('.btn').prop('disabled', true).text('Loading...');
+
+                $.post('/predict', formData)
+                    .done(function(data) {
+                        // Update weather information
+                        $('.temperature').text(data.weather.temperature + '°C');
+                        $('.wind-speed').text(data.weather.wind_speed.toFixed(1) + ' m/s');
+                        $('.cloud-cover').text(data.weather.cloud_cover + '%');
+                        $('.condition').text(data.weather.condition);
+
+                        // Clear and update energy sources
+                        const energySourcesContainer = $('.energy-sources');
+                        energySourcesContainer.empty();
+
+                        if (data.energy_sources && data.energy_sources.length > 0) {
+                            data.energy_sources.forEach(function(source) {
+                                const energyCard = $('<div class="energy-card">');
+                                energyCard.html(`
+                                    <h3>${source.name}</h3>
+                                    <div class="efficiency-meter">
+                                        <div class="efficiency-fill" style="width: ${source.efficiency}%"></div>
+                                    </div>
+                                    <p><strong>Efficiency:</strong> ${source.efficiency.toFixed(1)}%</p>
+                                    <p>${source.description}</p>
+                                `);
+                                energySourcesContainer.append(energyCard);
+                            });
+                        } else {
+                            energySourcesContainer.html('<p>No optimal energy sources found for the given conditions.</p>');
+                        }
+
+                        // Show results
+                        $('.results-container').fadeIn();
+                    })
+                    .fail(function(jqXHR) {
+                        const errorMessage = jqXHR.responseJSON?.error || 'An unexpected error occurred. Please try again.';
+                        $('.error-message').text(errorMessage).fadeIn();
+                    })
+                    .always(function() {
+                        $('.btn').prop('disabled', false).text('Find Renewable Energy Sources');
+                    });
+            });
+        });
+    </script>
 </body>
 </html>

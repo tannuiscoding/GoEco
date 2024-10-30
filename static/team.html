@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoEco-Team</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <!-- <style>
+      :root {
+        --primary-color: #2ecc71;
+        --secondary-color: #27ae60;
+        --text-color: #2c3e50;
+        --light-gray: #ecf0f1;
+        --white: #ffffff;
+        --gradient-team: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background: var(--light-gray);
+        min-height: 100vh;
+        color: var(--text-color);
+      }
+
+      /* Header Styling */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--white);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        height: 3rem;
+      }
+
+      header ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      header ul li a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+      }
+
+      header ul li a:hover,
+      header ul li a.active {
+        color: var(--white);
+        background: var(--primary-color);
+      }
+
+     
+
+      @media (max-width: 480px) {
+        header ul {
+          display: none;
+        }
+
+        #team-title h1 {
+          font-size: 2rem;
+        }
+
+        #members {
+          grid-template-columns: 1fr;
+          padding: 1.5rem 2%;
+        }
+
+        #member {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Mobile Menu Button */
+      .mobile-menu-btn {
+        display: none;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+      }
+
+      @media (max-width: 480px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="images/logo.png" class="logo" alt="GoEco Logo" />
+      </a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="#" class="active">Team</a></li>
+      </ul>
+    </header>
+
+    <section id="team-title">
+      <h1><u>Team Members:</u></h1>
+    </section>
+
+    <section class="members">
+      <div id="member">
+        <img src="images/tannu.jpeg" class="memImg" />
+        <h3>Tannu Choudhary</h3>
+        <p>MCA 1st Year @IGDTUW</p>
+        <h4>Follow Us:</h4>
+        <div id="social-icons">
+          <a href="https://LinkedIn.com/in/tchoudhary1611" target="_blank">
+            <img src="images/linkedIn.png" alt="LinkedIn" />
+          </a>
+          <a href="https://GitHub.com/tannuiscoding" target="_blank">
+            <img src="images/gitHub.png" alt="gitHub" />
+          </a>
+          <a href="https://x.com/tannuiscoding" target="_blank">
+            <img src="images/x.png" alt="X" />
+          </a>
+        </div>
+      </div>
+
+      <div id="member">
+        <img src="images/mansi.jpeg" class="memImg" />
+        <h3>Mansi</h3>
+        <p>MCA 1st Year @IGDTUW</p>
+        <h4>Follow Us:</h4>
+        <div id="social-icons">
+          <a
+            href="https://www.linkedin.com/in/mansi-b4533b203/"
+            target="_blank"
+          >
+            <img src="images/linkedIn.png" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/MansiJangid" target="_blank">
+            <img src="images/gitHub.png" alt="gitHub" />
+          </a>
+        </div>
+      </div>
+      <div id="member">
+        <img src="images/ritika.jpeg" class="memImg" />
+        <h3>Ritika Sharma</h3>
+        <p>MCA 1st Year @IGDTUW</p>
+        <h4>Follow Us:</h4>
+        <div id="social-icons">
+          <a
+            href="https://www.linkedin.com/in/ritika-sharma-075863184?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+          >
+            <img src="images/linkedIn.png" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/Ritika0077" target="_blank">
+            <img src="images/gitHub.png" alt="gitHub" />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
