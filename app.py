@@ -10,8 +10,6 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-# Configuration
 class Config:
     API_KEY = os.getenv("WEATHER_API_KEY", "YOUR_API_KEY")
     WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
@@ -25,7 +23,6 @@ class WeatherData:
     cloud_cover: int  # in percentage
     condition: str
     humidity: int
-
 
 @dataclass
 class EnergySource:
