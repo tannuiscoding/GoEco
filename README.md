@@ -8,7 +8,9 @@
 **GoEco** is a web application that solves the issue of energy sources. This website is going to help people in finding which renewable energy source is best for their location.
 
 
-![GoEco](static/images/webpage.png)
+![hacktober_goeco_image_update](https://github.com/user-attachments/assets/0d20683e-ba54-41c8-b8c1-0227fb287056)
+
+
 
 
 <!--line-->
