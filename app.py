@@ -35,11 +35,7 @@ class EnergySource:
 @dataclass
 class WeatherData:
     temperature: float
-    wind_speed:
-@dataclass
-class WeatherData:
-    temperature: float
-    wind_speed: float  # in m/s
+    wind_speed: float
     rainfall: float  # in mm
     cloud_cover: int  # in percentage
     condition: str
