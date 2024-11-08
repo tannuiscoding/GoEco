@@ -10,23 +10,20 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
 class Config:
     API_KEY = os.getenv("WEATHER_API_KEY", "YOUR_API_KEY")
     WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
 
-
 @dataclass
 class CostBenefitAnalysis:
-    installation_cost: float  # Initial setup cost in USD
-    annual_maintenance: float  # Yearly maintenance cost in USD
-    annual_savings: float  # Estimated yearly savings in USD
-    payback_period: float  # Years until investment is recovered
-    carbon_reduction: float  # Annual CO2 reduction in metric tons
-    government_incentives: float  # Available tax incentives/rebates in USD
-    lifetime: int  # Expected system lifetime in years
-    roi: float  # Return on Investment percentage
-
+    installation_cost: float
+    annual_maintenance: float
+    annual_savings: float
+    payback_period: float
+    carbon_reduction: float
+    government_incentives: float
+    lifetime: int
+    roi: float
 
 @dataclass
 class EnergySource:
@@ -35,11 +32,10 @@ class EnergySource:
     description: str
     cost_benefit: Optional[CostBenefitAnalysis] = None
 
-
 @dataclass
 class WeatherData:
     temperature: float
-    wind_speed: float  # in m/s
+    wind_speed: float
     rainfall: float  # in mm
     cloud_cover: int  # in percentage
     condition: str
