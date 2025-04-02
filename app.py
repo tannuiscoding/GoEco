@@ -10,9 +10,25 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', template_folder='templates')
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/service')
+def service():
+    return render_template('service.html')
+
+@app.route('/team')
+def team():
+    return render_template('team.html')
 
 class Config:
     API_KEY = os.getenv("WEATHER_API_KEY")
@@ -380,11 +396,6 @@ def calculate_hydro_efficiency(rainfall: float) -> float:
     base_efficiency = 70  # Base efficiency for hydropower
     rainfall_factor = min(1 + (rainfall / 100), 1.3)  # Max 30% boost from rainfall
     return base_efficiency * rainfall_factor
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
 
 
 @app.route("/predict", methods=["POST"])
