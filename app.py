@@ -5,13 +5,17 @@ import requests
 import logging
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class Config:
-    API_KEY = os.getenv("WEATHER_API_KEY", "YOUR_API_KEY")
+    API_KEY = os.getenv("WEATHER_API_KEY")
     WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
 
 @dataclass
