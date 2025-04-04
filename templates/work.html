@@ -4,29 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoEco - Energy Partners</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
   </head>
   <body>
     <header>
-      <a href="/">
-        <img src="images/logo.png" class="logo" alt="GoEco Logo" />
-      </a>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="about.html">About</a>
-        </li>
-        <li><a href="work.html" class="active">Work</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
-    </header>
-
+      <div class="container">
+          <div class="logo">
+              <a href="{{ url_for('index') }}">
+                  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+                  <span>GoEco</span>
+              </a>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+                  <li><a href="{{ url_for('about') }}">Blog</a></li>
+                  <li><a href="{{ url_for('work') }}">Work</a></li>
+                  <li><a href="{{ url_for('team') }}">Team</a></li>
+              </ul>
+          </nav>
+          <div class="cta-button">
+              <a href="{{ url_for('service') }}" class="btn">Get Started</a>
+          </div>
+      </div>
+  </header>
     <section id="work-title">
       <h1>Our Energy Partners</h1>
       <p>Collaborating with industry leaders for a sustainable future</p>

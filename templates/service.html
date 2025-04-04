@@ -4,50 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoEco - Renewable Energy Recommender</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles/styles.css') }}"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
   </head>
   <body>
+    <!-- Header Section -->
     <header>
-      <img src="static/images/logo.png" class="logo" />
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li>
-          <a href="{{ url_for('static',filename='about.html') }}">About</a>
-        </li>
-        <li><a href="{{ url_for('static',filename='work.html') }}">Work</a></li>
-        <li><a href="{{ url_for('static',filename='team.html') }}">Team</a></li>
-      </ul>
+      <div class="container">
+        <div class="logo">
+          <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+            <span>GoEco</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('about') }}">Blog</a></li>
+            <li><a href="{{ url_for('work') }}">Work</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
+          </ul>
+        </nav>
+        <div class="cta-button">
+          <a href="{{ url_for('service') }}" class="btn">Get Started</a>
+        </div>
+      </div>
     </header>
 
-    <section id="title">
-      <h1><u>Renewable</u><br /><u>Energy Source Recommender</u></h1>
-    </section>
-
+    <!-- Main Content Section -->
     <section class="hero">
-      <div class="container">
-        <h2>Find Your Optimal Renewable Energy Solution</h2>
-        <form id="energyForm">
-          <div class="form-group">
-            <input
-              type="text"
-              placeholder="Enter City Name"
-              class="form-control"
-              id="city"
-              name="city"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <select class="form-control" id="state" name="state" required>
-              <option value="">Select State</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <!-- Title -->
+      <div id="title">
+        <h1>Find Your Optimal <br>Renewable Energy Solution</h1>
+      </div>
+
+      <div class="container2">
+        <!-- Input Form -->
+          <form id="energyForm">
+            <!-- Location Selection -->
+             <div>
+
+               <select class="form-control" id="state" name="state" required>
+                 <option value="">Select State</option>
+                 <!-- States -->
+                 <option value="Andhra Pradesh">Andhra Pradesh</option>
               <option value="Arunachal Pradesh">Arunachal Pradesh</option>
               <option value="Assam">Assam</option>
               <option value="Bihar">Bihar</option>
@@ -77,13 +77,9 @@
               <option value="West Bengal">West Bengal</option>
 
               <!-- Union Territories -->
-              <option value="Andaman and Nicobar Islands">
-                Andaman and Nicobar Islands
-              </option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
               <option value="Chandigarh">Chandigarh</option>
-              <option value="Dadra and Nagar Haveli and Daman and Diu">
-                Dadra and Nagar Haveli and Daman and Diu
-              </option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
               <option value="Delhi">Delhi</option>
               <option value="Jammu and Kashmir">Jammu and Kashmir</option>
               <option value="Ladakh">Ladakh</option>
@@ -91,100 +87,75 @@
               <option value="Puducherry">Puducherry</option>
             </select>
           </div>
-          <div class="form-group">
-            <input
-              type="number"
-              placeholder="Enter Sunshine Hours (0-24)"
-              class="form-control"
-              id="sunshine_hours"
-              name="sunshine_hours"
-              min="0"
-              max="24"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              placeholder="Power Requirement (kW)"
-              class="form-control"
-              id="power_requirement"
-              name="power_requirement"
-              min="1"
-              value="10"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="number"
-              placeholder="Electricity Rate (₹/kWh)"
-              class="form-control"
-              id="electricity_rate"
-              name="electricity_rate"
-              min="1"
-              value="8"
-            />
-          </div>
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="is_near_water"
-              name="is_near_water"
-            />
-            <label class="form-check-label" for="is_near_water"
-              >Near Water Source</label
-            >
-          </div>
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="is_geothermal_region"
-              name="is_geothermal_region"
-            />
-            <label class="form-check-label" for="is_geothermal_region"
-              >In Geothermal Region</label
-            >
-          </div>
-          <button type="submit" class="btn">
-            Find Renewable Energy Sources
-          </button>
-        </form>
 
-        <div class="error-message"></div>
 
-        <div class="results-container" style="display: none">
-          <h3>Current Weather Conditions</h3>
-          <div class="weather-info">
-            <div class="weather-card">
-              <i class="fas fa-thermometer-half"></i>
-              <h4>Temperature</h4>
-              <p class="temperature">--°C</p>
+
+          <div class="form-group">
+              <!-- City Input -->
+              <input type="text" placeholder="Enter City Name" class="form-control" id="city" name="city" required />
+              
+              <!-- Energy Requirements -->
+              <input type="number" placeholder="Enter Sunshine Hours (0-24)" class="form-control" id="sunshine_hours" name="sunshine_hours" min="0" max="24" required />
+         
+          
+              <input type="number" placeholder="Power Requirement (kW)" class="form-control" id="power_requirement" name="power_requirement" min="1" />
+      
+          
+              <input type="number" placeholder="Electricity Rate (₹/kWh)" class="form-control" id="electricity_rate" name="electricity_rate" min="1" />
+      
+
+            <!-- Additional Conditions -->
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="is_near_water" name="is_near_water" />
+              <label class="form-check-label" for="is_near_water">Near Water Source</label>
             </div>
-            <div class="weather-card">
-              <i class="fas fa-wind"></i>
-              <h4>Wind Speed</h4>
-              <p class="wind-speed">-- m/s</p>
-            </div>
-            <div class="weather-card">
-              <i class="fas fa-cloud"></i>
-              <h4>Cloud Cover</h4>
-              <p class="cloud-cover">--%</p>
-            </div>
-            <div class="weather-card">
-              <i class="fas fa-sun"></i>
-              <h4>Condition</h4>
-              <p class="condition">--</p>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="is_geothermal_region" name="is_geothermal_region" />
+              <label class="form-check-label" for="is_geothermal_region">In Geothermal Region</label>
             </div>
           </div>
 
-          <h3>Recommended Energy Sources</h3>
-          <div class="energy-sources"></div>
-        </div>
+            <button type="submit" class="btn">Find Renewable Energy Sources</button>
+          </form>
+
+          <!-- Error Messages -->
+          <div class="error-message"></div>
+
+          <!-- Results Section -->
+          <div class="results-container" style="display: none">
+            <!-- Weather Information -->
+            <h3>Current Weather Conditions</h3>
+            <div class="weather-info">
+              <div class="weather-card">
+                <i class="fas fa-thermometer-half"></i>
+                <h4>Temperature</h4>
+                <p class="temperature">--°C</p>
+              </div>
+              <div class="weather-card">
+                <i class="fas fa-wind"></i>
+                <h4>Wind Speed</h4>
+                <p class="wind-speed">-- m/s</p>
+              </div>
+              <div class="weather-card">
+                <i class="fas fa-cloud"></i>
+                <h4>Cloud Cover</h4>
+                <p class="cloud-cover">--%</p>
+              </div>
+              <div class="weather-card">
+                <i class="fas fa-sun"></i>
+                <h4>Condition</h4>
+                <p class="condition">--</p>
+              </div>
+            </div>
+
+            <!-- Energy Sources Recommendations -->
+            <h3>Recommended Energy Sources</h3>
+            <div class="energy-sources"></div>
+          </div>
       </div>
     </section>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -192,19 +163,21 @@
           event.preventDefault();
           const formData = $(this).serialize();
 
+          // Reset UI state
           $(".error-message").hide();
           $(".results-container").hide();
           $(".btn").prop("disabled", true).text("Analyzing...");
 
+          // Make API request
           $.post("/predict", formData)
             .done(function (data) {
+              // Update weather information
               $(".temperature").text(data.weather.temperature + "°C");
-              $(".wind-speed").text(
-                data.weather.wind_speed.toFixed(1) + " m/s"
-              );
+              $(".wind-speed").text(data.weather.wind_speed.toFixed(1) + " m/s");
               $(".cloud-cover").text(data.weather.cloud_cover + "%");
               $(".condition").text(data.weather.condition);
 
+              // Update energy sources
               const energySourcesContainer = $(".energy-sources");
               energySourcesContainer.empty();
 
@@ -212,86 +185,58 @@
                 data.energy_sources.forEach(function (source) {
                   const energyCard = $('<div class="energy-card">');
                   energyCard.html(`
-                                    <h3>${source.name}</h3>
-                                    <div class="efficiency-meter">
-                                        <div class="efficiency-fill" style="width: ${
-                                          source.efficiency
-                                        }%"></div>
-                                    </div>
-                                    <p><strong>Efficiency:</strong> ${source.efficiency.toFixed(
-                                      1
-                                    )}%</p>
-                                    <p>${source.description}</p>
-                                    ${
-                                      source.cost_benefit
-                                        ? `
-                                        <div class="cost-benefit-section">
-                                            <h4>Cost-Benefit Analysis</h4>
-                                            <div class="cost-benefit-grid">
-                                                <div class="cost-item">
-                                                    <p>Installation Cost</p>
-                                                    <div class="value">₹${source.cost_benefit.installation_cost.toLocaleString(
-                                                      "en-IN"
-                                                    )}</div>
-                                                </div>
-                                                <div class="cost-item">
-                                                    <p>Annual Savings</p>
-                                                    <div class="value">₹${source.cost_benefit.annual_savings.toLocaleString(
-                                                      "en-IN"
-                                                    )}</div>
-                                                </div>
-                                                <div class="cost-item">
-                                                    <p>Govt. Incentives</p>
-                                                    <div class="value">₹${source.cost_benefit.government_incentives.toLocaleString(
-                                                      "en-IN"
-                                                    )}</div>
-                                                </div>
-                                                <div class="cost-item">
-                                                    <p>ROI</p>
-                                                    <div class="value">${
-                                                      source.cost_benefit.roi
-                                                    }%</div>
-                                                </div>
-                                                <div class="cost-item">
-                                                    <p>Payback Period</p>
-                                                    <div class="value">${
-                                                      source.cost_benefit
-                                                        .payback_period
-                                                    } years</div>
-                                                </div>
-                                                <div class="cost-item">
-                                                    <p>Carbon Reduction</p>
-                                                    <div class="value">${
-                                                      source.cost_benefit
-                                                        .carbon_reduction
-                                                    } tons/year</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    `
-                                        : ""
-                                    }
-                                `);
+                    <h3>${source.name}</h3>
+                    <div class="efficiency-meter">
+                      <div class="efficiency-fill" style="width: ${source.efficiency}%"></div>
+                    </div>
+                    <p><strong>Efficiency:</strong> ${source.efficiency.toFixed(1)}%</p>
+                    <p>${source.description}</p>
+                    ${source.cost_benefit ? `
+                      <div class="cost-benefit-section">
+                        <h4>Cost-Benefit Analysis</h4>
+                        <div class="cost-benefit-grid">
+                          <div class="cost-item">
+                            <p>Installation Cost</p>
+                            <div class="value">₹${source.cost_benefit.installation_cost.toLocaleString("en-IN")}</div>
+                          </div>
+                          <div class="cost-item">
+                            <p>Annual Savings</p>
+                            <div class="value">₹${source.cost_benefit.annual_savings.toLocaleString("en-IN")}</div>
+                          </div>
+                          <div class="cost-item">
+                            <p>Govt. Incentives</p>
+                            <div class="value">₹${source.cost_benefit.government_incentives.toLocaleString("en-IN")}</div>
+                          </div>
+                          <div class="cost-item">
+                            <p>ROI</p>
+                            <div class="value">${source.cost_benefit.roi}%</div>
+                          </div>
+                          <div class="cost-item">
+                            <p>Payback Period</p>
+                            <div class="value">${source.cost_benefit.payback_period} years</div>
+                          </div>
+                          <div class="cost-item">
+                            <p>Carbon Reduction</p>
+                            <div class="value">${source.cost_benefit.carbon_reduction} tons/year</div>
+                          </div>
+                        </div>
+                      </div>
+                    ` : ""}
+                  `);
                   energySourcesContainer.append(energyCard);
                 });
               } else {
-                energySourcesContainer.html(
-                  "<p>No optimal energy sources found for the given conditions.</p>"
-                );
+                energySourcesContainer.html("<p>No optimal energy sources found for the given conditions.</p>");
               }
 
               $(".results-container").fadeIn();
             })
             .fail(function (jqXHR) {
-              const errorMessage =
-                jqXHR.responseJSON?.error ||
-                "An unexpected error occurred. Please try again.";
+              const errorMessage = jqXHR.responseJSON?.error || "An unexpected error occurred. Please try again.";
               $(".error-message").text(errorMessage).fadeIn();
             })
             .always(function () {
-              $(".btn")
-                .prop("disabled", false)
-                .text("Find Renewable Energy Sources");
+              $(".btn").prop("disabled", false).text("Find Renewable Energy Sources");
             });
         });
       });
