@@ -4,25 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoEco-About</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-    ">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
   </head>
   <body>
     <header>
-      <a href="/">
-        <img src="images/logo.png" class="logo" alt="GoEco Logo" />
-      </a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#" class="active">About</a></li>
-        <li><a href="work.html">Work</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
+      <div class="container">
+        <div class="logo">
+          <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+            <span>GoEco</span>
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('about') }}">Blog</a></li>
+            <li><a href="{{ url_for('work') }}">Work</a></li>
+            <li><a href="{{ url_for('team') }}">Team</a></li>
+          </ul>
+        </nav>
+        <div class="cta-button">
+          <a href="{{ url_for('service') }}" class="btn">Get Started</a>
+        </div>
+      </div>
     </header>
-
-    <section id="about-title">
-      <h1><u>Renewable</u><br /><u>Energy Sources</u></h1>
+    
+    <section class="hero">
+      <!-- Title -->
+      <div id="title">
+        <h1>Renewable <br>Energy Sources</h1>
+      </div>
     </section>
+
 
     <section class="sec">
       <h2>1. Solar Energy</h2>

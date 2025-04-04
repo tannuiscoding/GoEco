@@ -30,6 +30,10 @@ def service():
 def team():
     return render_template('team.html')
 
+@app.route('/work')
+def work():
+    return render_template('work.html')
+
 class Config:
     API_KEY = os.getenv("WEATHER_API_KEY")
     WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
@@ -68,12 +72,36 @@ class WeatherAPIError(Exception):
 
 
 def get_weather_data(city: str) -> WeatherData:
-
     # Fetch weather data from WeatherAPI.com with error handling
-
     try:
-        params = {"key": Config.API_KEY, "q": city, "aqi": "no"}
-        response = requests.get(Config.WEATHER_API_URL, params=params)
+        # Add API key validation
+        if not Config.API_KEY:
+            raise WeatherAPIError("Weather API key not found in environment variables")
+
+        params = {
+            "key": Config.API_KEY,
+            "q": city,
+            "aqi": "no"
+        }
+        
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Accept": "application/json"
+        }
+
+        response = requests.get(
+            Config.WEATHER_API_URL, 
+            params=params,
+            headers=headers,
+            timeout=10
+        )
+
+        # Check for specific error status codes
+        if response.status_code == 401:
+            raise WeatherAPIError("Invalid API key")
+        elif response.status_code == 403:
+            raise WeatherAPIError("API key has expired or reached its limit")
+        
         response.raise_for_status()
         data = response.json()
 
@@ -85,9 +113,15 @@ def get_weather_data(city: str) -> WeatherData:
             condition=data["current"]["condition"]["text"].lower(),
             humidity=data["current"]["humidity"],
         )
-    except requests.RequestException as e:
+    except requests.exceptions.Timeout:
+        logger.error("Weather API request timed out")
+        raise WeatherAPIError("Weather API request timed out")
+    except requests.exceptions.RequestException as e:
         logger.error(f"Error fetching weather data: {str(e)}")
         raise WeatherAPIError(f"Failed to fetch weather data: {str(e)}")
+    except KeyError as e:
+        logger.error(f"Invalid response format from weather API: {str(e)}")
+        raise WeatherAPIError("Invalid response format from weather API")
 
 
 def calculate_cost_benefit(

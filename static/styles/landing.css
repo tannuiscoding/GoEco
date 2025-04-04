@@ -21,7 +21,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.122), rgba(0, 0, 0, 0.155)), url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -480,6 +482,80 @@ nav ul li a.active:after {
     font-size: 24px;
 }
 
+/* Form Styles */
+.form-section {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-submit .btn {
+    padding: 15px 40px;
+    font-size: 18px;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .features .container,
@@ -514,6 +590,14 @@ nav ul li a.active:after {
     .hero-indicator {
         display: none;
     }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -533,5 +617,10 @@ nav ul li a.active:after {
     
     .planet {
         font-size: 20px;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        gap: 10px;
     }
 }
