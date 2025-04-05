@@ -11,28 +11,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <header>
-      <div class="container">
-          <div class="logo">
-              <a href="{{ url_for('index') }}">
-                  <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
-                  <span>GoEco</span>
-              </a>
-          </div>
-          <nav>
-              <ul>
-                  <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
-                  <li><a href="{{ url_for('about') }}">Blog</a></li>
-                  <li><a href="{{ url_for('work') }}">Work</a></li>
-                  <li><a href="{{ url_for('team') }}">Team</a></li>
-              </ul>
-          </nav>
-          <div class="cta-button">
-              <a href="{{ url_for('service') }}" class="btn">Get Started</a>
-          </div>
-      </div>
-  </header>
+        <div class="container">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+                    <span>GoEco</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" class="active">Blog</a></li>
+                    <li><a href="{{ url_for('work') }}">Work</a></li>
+                    <li><a href="{{ url_for('team') }}">Team</a></li>
+                    <li><a href="{{ url_for('blog') }}">About</a></li>
+                </ul>
+            </nav>
+            <div class="cta-button">
+                <a href="{{ url_for('service') }}" class="btn">Get Started</a>
+            </div>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
