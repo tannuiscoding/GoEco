@@ -34,6 +34,10 @@ def team():
 def work():
     return render_template('work.html')
 
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
 class Config:
     API_KEY = os.getenv("WEATHER_API_KEY")
     WEATHER_API_URL = "http://api.weatherapi.com/v1/current.json"
