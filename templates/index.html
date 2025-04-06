@@ -20,8 +20,7 @@
                 <ul>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                     <li><a href="{{ url_for('about') }}" class="active">Blog</a></li>
-                    <li><a href="{{ url_for('work') }}">Work</a></li>
-                    <li><a href="{{ url_for('team') }}">Team</a></li>
+                    <li><a href="{{ url_for('work') }}">Our Partners</a></li>
                     <li><a href="{{ url_for('blog') }}">About</a></li>
                 </ul>
             </nav>
@@ -200,7 +199,6 @@
                         Many people are overwhelmed by the technical aspects of choosing between solar, wind, hydro, and other renewable options.
                     </p>
                     <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="Decision Complexity">
                     </div>
                 </div>
                 
@@ -213,7 +211,6 @@
                         Weather patterns and geographical features significantly impact the effectiveness of different energy sources.
                     </p>
                     <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="Location Variability">
                     </div>
                 </div>
                 
@@ -226,7 +223,6 @@
                         Without accurate data, it's difficult to estimate the financial return and environmental impact of renewable investments.
                     </p>
                     <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="ROI Uncertainty">
                     </div>
                 </div>
             </div>
@@ -399,21 +395,24 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="features">
-        <div class="container">
-            <div class="features-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <div class="tag">GET STARTED</div>
-                <h2>Ready to Find Your Optimal Renewable Energy Source?</h2>
-                <p>
-                    Visit our homepage to enter your location and get personalized recommendations tailored to your specific conditions.
-                </p>
-                <div style="margin-top: 30px;">
-                    <a href="{{ url_for('index') }}" class="btn">Try Our Tool Now</a>
-                </div>
-            </div>
+<!-- Call to Action -->
+<section class="features" style="background-color: #eafbe6; padding: 60px 20px;">
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <div style="color: #2e7d32; font-weight: bold; letter-spacing: 1px; margin-bottom: 15px;">
+            GET STARTED
         </div>
-    </section>
+        <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 20px; color: #1b1b1b;">
+            Ready to Find Your Optimal Renewable Energy Source?
+        </h2>
+        <p style="font-size: 1.1rem; color: #333; margin-bottom: 30px;">
+            Visit our homepage to enter your location and get personalized recommendations tailored to your specific conditions.
+        </p>
+        <a href="{{ url_for('service') }}" style="background-color: #4caf50; color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+            Try Our Tool Now
+        </a>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer style="background-color: var(--dark-color); color: var(--light-text); padding: 40px 0;">
