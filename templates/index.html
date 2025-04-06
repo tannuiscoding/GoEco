@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoEco - Environmental Solutions</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles/landing.css') }}"
-    />
+    <title>GoEco - About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -38,12 +35,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="tag">NATURAL ENVIRONMENT</div>
-                <h1>Be Safe Controls Environment</h1>
-                <p>Professionally optimize transparent intellectual strategies connect best practices. Progressively fabricate done</p>
+                <div class="tag">ABOUT US</div>
+                <h1>Powering a Sustainable Future with Smart Energy Choices</h1>
+                <p>GoEco helps you make informed decisions about renewable energy sources based on your location and real-time weather conditions.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn">Let's Talk</a>
-                    <a href="#" class="btn btn-outline">Read More</a>
+                    <a href="{{ url_for('index') }}" class="btn">Try Our Tool</a>
+                    <a href="#mission" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
         </div>
@@ -80,119 +77,77 @@
         </div>
     </div>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Mission Section -->
+    <section id="mission" class="features">
         <div class="container">
             <div class="features-image">
-                <img src="/placeholder.svg?height=400&width=350" alt="Environmental Image">
+                <img src="{{ url_for('static', filename='images/renewableEnergy.jpg') }}" alt="Renewable Energy">
                 <div class="award-badge">
                     <i class="fas fa-award"></i>
-                    <span>NATURE LOVING</span>
+                    <span>COMMITTED TO SUSTAINABILITY</span>
                 </div>
             </div>
             <div class="features-content">
-                <div class="tag">ABOUT COMPANY</div>
-                <h2>Environmental Sustainable Forever Green Future</h2>
-                
+                <div class="tag">OUR MISSION</div>
+                <h2>Empowering Communities Through Sustainable Energy Solutions</h2>
+                <p>
+                    At GoEco, we believe that the transition to renewable energy should be accessible and straightforward for everyone. Our mission is to democratize access to personalized renewable energy insights by providing data-driven recommendations tailored to your specific location.
+                </p>
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <div class="feature-text">
-                        <h3>Economic Benefits</h3>
-                        <p>Alternative innovation other ethical to optimize environmental utilization transparent growth natural state</p>
+                        <h3>Vision</h3>
+                        <p>
+                            We envision a world where every home and business can make informed decisions about renewable energy adoption, contributing to a sustainable and carbon-neutral future.
+                        </p>
                     </div>
                 </div>
                 
                 <div class="feature-item">
                     <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-bullseye"></i>
                     </div>
                     <div class="feature-text">
-                        <h3>Safe Environment</h3>
-                        <p>Alternative innovation other ethical to optimize environmental utilization transparent growth natural state</p>
+                        <h3>Values</h3>
+                        <p>
+                            We are committed to accuracy, transparency, and accessibility in our recommendations, ensuring that users receive reliable information to guide their energy decisions.
+                        </p>
                     </div>
                 </div>
                 
-                <a href="#" class="btn">More About</a>
+                <a href="#why-matters" class="btn">Learn More</a>
                 <div class="leaf-decoration"></div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <div class="section-header">
-                <div class="tag">OUR SERVICES</div>
-                <h2>GoEco Provide Best Renewable Energy Source for your business with cost analysis and calculation of carbon reduction.</h2>
-            </div>
-            
-            <div class="services-navigation">
-                <button class="nav-btn prev"><i class="fas fa-arrow-left"></i></button>
-                <button class="nav-btn next"><i class="fas fa-arrow-right"></i></button>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3>Carbon Reduction</h3>
-                    <p>Gives you idea of how much carbon would be reduced by using our recommended energy source</p>
-                    <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="Recycling">
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Cost analysis</h3>
-                    <p>Get an idea of installation cost of the energy source and how much would you save annually along with time of return on interest.</p>
-                    <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="Environment">
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>Government Incentives</h3>
-                    <p>We will calculate how much incentives would you get from the government along with the schemes that government offers.</p>
-                    <div class="service-image">
-                        <img src="/placeholder.svg?height=150&width=220" alt="Ocean Cleaning">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Goals Section -->
-    <section class="goals">
+    <!-- Why It Matters Section -->
+    <section id="why-matters" class="goals">
         <div class="container">
             <div class="goals-content">
-                <div class="tag">OUR GOALS</div>
-                <h2>Getting A Greener Future Safe Environment</h2>
-                <p>Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+                <div class="tag">WHY IT MATTERS</div>
+                <h2>Making the Right Renewable Energy Choice</h2>
+                <p>
+                    Not all renewable energy sources perform equally in every location. Weather conditions, geographical features, and local climate significantly impact each technology's efficiency and output.
+                </p>
                 
                 <div class="goals-items">
                     <div class="goal-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Safe Environment</span>
+                        <span>Maximize energy production</span>
                     </div>
                     <div class="goal-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Dirty Recycling</span>
+                        <span>Reduce carbon footprint</span>
                     </div>
                 </div>
                 
                 <div class="progress-bars">
                     <div class="progress-item">
                         <div class="progress-label">
-                            <span>Recycling</span>
+                            <span>Energy Efficiency</span>
                             <span>95%</span>
                         </div>
                         <div class="progress">
@@ -202,7 +157,7 @@
                     
                     <div class="progress-item">
                         <div class="progress-label">
-                            <span>Ocean Cleaning</span>
+                            <span>Carbon Reduction</span>
                             <span>80%</span>
                         </div>
                         <div class="progress">
@@ -217,10 +172,287 @@
                     <span>SAVE THE</span>
                     <span class="planet">PLANET</span>
                 </div>
-                <img src="/placeholder.svg?height=400&width=400" alt="Save the Planet">
+                <img src="{{ url_for('static', filename='images/savePlanet.jpg') }}" alt="Save the Planet">
             </div>
         </div>
     </section>
+
+    <!-- Problem Solution Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="tag">WHAT WE SOLVE</div>
+                <h2>Common Challenges in Renewable Energy Adoption</h2>
+            </div>
+            
+            <div class="services-navigation">
+                <button class="nav-btn prev"><i class="fas fa-arrow-left"></i></button>
+                <button class="nav-btn next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Decision Complexity</h3>
+                    <p>
+                        Many people are overwhelmed by the technical aspects of choosing between solar, wind, hydro, and other renewable options.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=220" alt="Decision Complexity">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Location Variability</h3>
+                    <p>
+                        Weather patterns and geographical features significantly impact the effectiveness of different energy sources.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=220" alt="Location Variability">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>ROI Uncertainty</h3>
+                    <p>
+                        Without accurate data, it's difficult to estimate the financial return and environmental impact of renewable investments.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=220" alt="ROI Uncertainty">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="features" style="background-color: var(--light-color);">
+        <div class="container">
+            <div class="features-content">
+                <div class="tag">HOW IT WORKS</div>
+                <h2>Smart Predictions for Optimal Energy Sources</h2>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Location Analysis</h3>
+                        <p>
+                            Enter your address or coordinates, and our system analyzes your geographical location to understand the baseline potential for different energy sources.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Weather API Integration</h3>
+                        <p>
+                            We connect to WeatherAPI to gather real-time and historical weather data for your location, including solar radiation, wind speeds, precipitation, and more.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Prediction Algorithm</h3>
+                        <p>
+                            Our custom algorithm weighs multiple factors to determine which renewable energy source would provide the highest efficiency and output in your specific conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="features-image">
+                <div class="award-badge">
+                    <i class="fas fa-cogs"></i>
+                    <span>SMART TECHNOLOGY</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Insights Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="tag">BEYOND RECOMMENDATIONS</div>
+                <h2>Comprehensive Energy Insights</h2>
+            </div>
+            
+            <div class="services-navigation">
+                <button class="nav-btn prev"><i class="fas fa-arrow-left"></i></button>
+                <button class="nav-btn next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Government Incentives</h3>
+                    <p>
+                        Information about available tax credits, rebates, and incentives for your recommended renewable energy source in your region.
+                    </p>
+                    <div class="service-image">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Carbon Reduction</h3>
+                    <p>
+                        Estimated carbon emissions you can prevent by adopting your recommended renewable energy solution.
+                    </p>
+                    <div class="service-image">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>ROI Calculation</h3>
+                    <p>
+                        Projected return on investment timeline, including installation costs, maintenance, and estimated energy savings over time.
+                    </p>
+                    <div class="service-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="goals">
+        <div class="container">
+            <div class="goals-content">
+                <div class="tag">TECHNOLOGY</div>
+                <h2>Built with Modern Technology</h2>
+                <p>
+                    GoEco leverages reliable, scalable technologies to deliver accurate recommendations and insights.
+                </p>
+                
+                <div class="goals-items">
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Flask Framework</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>WeatherAPI Integration</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Responsive Design</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Advanced Algorithms</span>
+                    </div>
+                </div>
+                
+                <div class="progress-bars">
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>Prediction Accuracy</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-item">
+                        <div class="progress-label">
+                            <span>User Satisfaction</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="goals-image">
+                <div class="save-planet">
+                    <span>TECH FOR</span>
+                    <span class="planet">CHANGE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="features">
+        <div class="container">
+            <div class="features-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="tag">GET STARTED</div>
+                <h2>Ready to Find Your Optimal Renewable Energy Source?</h2>
+                <p>
+                    Visit our homepage to enter your location and get personalized recommendations tailored to your specific conditions.
+                </p>
+                <div style="margin-top: 30px;">
+                    <a href="{{ url_for('index') }}" class="btn">Try Our Tool Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--dark-color); color: var(--light-text); padding: 40px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div>
+                    <div class="logo">
+                        <a href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+                            <span>GoEco</span>
+                        </a>
+                    </div>
+                    <p style="margin-top: 20px;">
+                        Empowering sustainable energy choices through data-driven recommendations.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                        <li><a href="{{ url_for('team') }}">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Connect With Us</h3>
+                    <div style="display: flex; gap: 15px; font-size: 24px;">
+                        <a href="https://x.com/tannuiscoding"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/tannuiscoding"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/tchoudhary1611"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 40px; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2025 GoEco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

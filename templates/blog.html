@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoEco - About Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
     <header>
         <div class="container">
             <div class="logo">
@@ -33,365 +33,230 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <span class="tag">ABOUT US</span>
-          <h1>Powering a Sustainable Future with Smart Energy Choices</h1>
-          <p>GoEco helps you make informed decisions about renewable energy sources based on your location and real-time weather conditions.</p>
-          <div class="hero-buttons">
-            <a href="{{ url_for('index') }}" class="btn">Try Our Tool</a>
-            <a href="#mission" class="btn btn-outline">Learn More</a>
-          </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="tag">ABOUT US</div>
+                <h1>Powering a Sustainable Future</h1>
+                <p>GoEco helps you make informed decisions about renewable energy sources based on your location and needs.</p>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Mission Section -->
-    <section id="mission" class="features">
-      <div class="container">
-        <div class="features-image">
-          <img src="{{ url_for('static', filename='images/mission.jpg') }}" alt="Renewable Energy" />
-          <div class="award-badge">
-            <i class="fas fa-award"></i>
-            <span>Committed to Sustainability</span>
-          </div>
-          <div class="leaf-decoration"></div>
+    <!-- Features Ticker -->
+    <div class="features-ticker">
+        <div class="ticker-wrapper">
+            <div class="ticker-item">
+                <i class="fas fa-water"></i>
+                <span>Carbon Reduction</span>
+            </div>
+            <div class="ticker-item">
+                <i class="fas fa-leaf"></i>
+                <span>Environmental</span>
+            </div>
+            <div class="ticker-item">
+                <i class="fas fa-sun"></i>
+                <span>Renewable-Energy</span>
+            </div>
+            <div class="ticker-item">
+                <i class="fas fa-water"></i>
+                <span>Ocean-Recycling</span>
+            </div>
+            <div class="ticker-item">
+                <i class="fas fa-leaf"></i>
+                <span>Environmental</span>
+            </div>
         </div>
-        <div class="features-content">
-          <span class="tag">OUR MISSION</span>
-          <h2>Empowering Communities Through Sustainable Energy Solutions</h2>
-          <p>
-            At GoEco, we believe that the transition to renewable energy should be accessible and straightforward for everyone. Our mission is to democratize access to personalized renewable energy insights by providing data-driven recommendations tailored to your specific location.
-          </p>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Vision</h3>
-              <p>
-                We envision a world where every home and business can make informed decisions about renewable energy adoption, contributing to a sustainable and carbon-neutral future.
-              </p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-bullseye"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Values</h3>
-              <p>
-                We are committed to accuracy, transparency, and accessibility in our recommendations, ensuring that users receive reliable information to guide their energy decisions.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- Why It Matters Section -->
-    <section class="goals">
-      <div class="container">
-        <div class="goals-content">
-          <span class="tag">WHY IT MATTERS</span>
-          <h2>Making the Right Renewable Energy Choice</h2>
-          <p>
-            Not all renewable energy sources perform equally in every location. Weather conditions, geographical features, and local climate significantly impact each technology's efficiency and output.
-          </p>
-          <div class="goals-items">
-            <div class="goal-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Maximize energy production</span>
-            </div>
-            <div class="goal-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Reduce carbon footprint</span>
-            </div>
-            <div class="goal-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Optimize investment returns</span>
-            </div>
-            <div class="goal-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Support energy independence</span>
-            </div>
-          </div>
-          <p>
-            By choosing the optimal renewable energy source for your specific location, you can significantly increase efficiency, reduce costs, and maximize environmental benefits.
-          </p>
-        </div>
-        <div class="goals-image">
-          <img src="{{ url_for('static', filename='images/why-matters.jpg') }}" alt="Renewable Energy Impact" />
-          <div class="save-planet">
-            <span class="planet"><i class="fas fa-globe-americas"></i></span>
-            <span>Save Our Planet</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Problem Solution Section -->
-    <section class="services">
-      <div class="container">
-        <div class="section-header">
-          <span class="tag">WHAT WE SOLVE</span>
-          <h2>Common Challenges in Renewable Energy Adoption</h2>
-          <p>
-            GoEco addresses key barriers that prevent individuals and businesses from making optimal renewable energy choices.
-          </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-question-circle"></i>
-            </div>
-            <h3>Decision Complexity</h3>
-            <p>
-              Many people are overwhelmed by the technical aspects of choosing between solar, wind, hydro, and other renewable options.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-cloud-sun"></i>
-            </div>
-            <h3>Location Variability</h3>
-            <p>
-              Weather patterns and geographical features significantly impact the effectiveness of different energy sources.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-calculator"></i>
-            </div>
-            <h3>ROI Uncertainty</h3>
-            <p>
-              Without accurate data, it's difficult to estimate the financial return and environmental impact of renewable investments.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="features" style="background-color: #fff;">
-      <div class="container">
-        <div class="features-content">
-          <span class="tag">HOW IT WORKS</span>
-          <h2>Smart Predictions for Optimal Energy Sources</h2>
-          <p>
-            GoEco uses real-time weather data and advanced algorithms to recommend the most efficient renewable energy source for your specific location.
-          </p>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Location Analysis</h3>
-              <p>
-                Enter your address or coordinates, and our system analyzes your geographical location to understand the baseline potential for different energy sources.
-              </p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Weather API Integration</h3>
-              <p>
-                We connect to WeatherAPI to gather real-time and historical weather data for your location, including solar radiation, wind speeds, precipitation, and more.
-              </p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Prediction Algorithm</h3>
-              <p>
-                Our custom algorithm weighs multiple factors to determine which renewable energy source would provide the highest efficiency and output in your specific conditions.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="features-image">
-          <img src="{{ url_for('static', filename='images/how-it-works.jpg') }}" alt="How GoEco Works" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Additional Insights Section -->
-    <section class="services" style="background-color: var(--light-color);">
-      <div class="container">
-        <div class="section-header">
-          <span class="tag">BEYOND RECOMMENDATIONS</span>
-          <h2>Comprehensive Energy Insights</h2>
-          <p>
-            GoEco provides valuable additional information to help you make a fully informed decision.
-          </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-hand-holding-usd"></i>
-            </div>
-            <h3>Government Incentives</h3>
-            <p>
-              Information about available tax credits, rebates, and incentives for your recommended renewable energy source in your region.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-leaf"></i>
-            </div>
-            <h3>Carbon Reduction</h3>
-            <p>
-              Estimated carbon emissions you can prevent by adopting your recommended renewable energy solution.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3>ROI Calculation</h3>
-            <p>
-              Projected return on investment timeline, including installation costs, maintenance, and estimated energy savings over time.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>Installation Details</h3>
-            <p>
-              Estimated costs and requirements for installing your recommended renewable energy system.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-piggy-bank"></i>
-            </div>
-            <h3>Cost Savings</h3>
-            <p>
-              Projected monthly and annual savings on energy bills after switching to your recommended renewable source.
-            </p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <h3>Energy Production</h3>
-            <p>
-              Estimated energy output based on your location's specific conditions and the recommended system specifications.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tech Stack Section -->
+    <!-- About Section -->
     <section class="features">
-      <div class="container">
-        <div class="features-image">
-          <img src="{{ url_for('static', filename='images/tech-stack.jpg') }}" alt="GoEco Technology" />
+        <div class="container">
+            <div class="features-image">
+                <img src="/placeholder.svg?height=400&width=350" alt="About GoEco">
+                <div class="award-badge">
+                    <i class="fas fa-award"></i>
+                    <span>SINCE 2020</span>
+                </div>
+            </div>
+            <div class="features-content">
+                <div class="tag">OUR STORY</div>
+                <h2>Committed to Environmental Sustainability</h2>
+                <p>
+                    Founded in 2024, GoEco is dedicated to making renewable energy accessible to everyone. We believe that with the right information, individuals and businesses can make better choices for our planet.
+                </p>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Our Mission</h3>
+                        <p>
+                            To provide data-driven recommendations that help people transition to renewable energy sources efficiently and economically.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Our Vision</h3>
+                        <p>
+                            A world where renewable energy is the standard, reducing carbon emissions and creating a sustainable future for generations to come.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="features-content">
-          <span class="tag">TECHNOLOGY</span>
-          <h2>Built with Modern Technology</h2>
-          <p>
-            GoEco leverages reliable, scalable technologies to deliver accurate recommendations and insights.
-          </p>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fab fa-python"></i>
+    </section>
+
+    <!-- Team Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="tag">OUR TEAM</div>
+                <h2>Meet the Experts Behind GoEco</h2>
             </div>
-            <div class="feature-text">
-              <h3>Flask Framework</h3>
-              <p>
-                A lightweight Python web framework that allows us to build a responsive, user-friendly application with powerful backend processing capabilities.
-              </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Jane Doe</h3>
+                    <p>
+                        Founder & CEO<br>
+                        Environmental Engineer with 10+ years of experience in renewable energy solutions.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=150" alt="Jane Doe">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>John Smith</h3>
+                    <p>
+                        CTO<br>
+                        Data Scientist specializing in climate modeling and energy efficiency algorithms.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=150" alt="John Smith">
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Emily Chen</h3>
+                    <p>
+                        Head of Research<br>
+                        PhD in Sustainable Energy with expertise in renewable technology implementation.
+                    </p>
+                    <div class="service-image">
+                        <img src="/placeholder.svg?height=150&width=150" alt="Emily Chen">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-cloud-download-alt"></i>
-            </div>
-            <div class="feature-text">
-              <h3>WeatherAPI Integration</h3>
-              <p>
-                Real-time access to comprehensive weather data, allowing our algorithm to make accurate predictions based on current and historical conditions.
-              </p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="feature-text">
-              <h3>Front-End Development</h3>
-              <p>
-                Clean, responsive HTML/CSS design ensures our application is accessible and easy to use on any device, from smartphones to desktops.
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="goals">
+        <div class="container">
+            <div class="goals-content">
+                <div class="tag">OUR VALUES</div>
+                <h2>What Drives Us</h2>
+                <p>
+                    At GoEco, our work is guided by core principles that reflect our commitment to the environment and our users.
+                </p>
+                
+                <div class="goals-items">
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Sustainability First</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Data-Driven Decisions</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>User Accessibility</span>
+                    </div>
+                    <div class="goal-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Continuous Innovation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="goals-image">
+                <div class="save-planet">
+                    <span>SAVE THE</span>
+                    <span class="planet">PLANET</span>
+                </div>
+                <img src="/placeholder.svg?height=400&width=400" alt="Our Values">
+            </div>
+        </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="form-section" style="background-color: var(--primary-color); color: var(--light-text);">
-      <div class="container">
-        <div class="section-header">
-          <h2>Ready to Find Your Optimal Renewable Energy Source?</h2>
-          <p>
-            Visit our homepage to enter your location and get personalized recommendations tailored to your specific conditions.
-          </p>
-          <div style="margin-top: 30px; text-align: center;">
-            <a href="{{ url_for('index') }}" class="btn btn-outline">Get Started Now</a>
-          </div>
+    <section class="features" style="background-color: var(--primary-color); color: var(--light-text); padding: 60px 0;">
+        <div class="container">
+            <div class="features-content" style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2>Ready to make a difference?</h2>
+                <p style="margin-bottom: 30px;">
+                    Join us in our mission to create a more sustainable future through smart energy choices.
+                </p>
+                <a href="{{ url_for('index') }}" class="btn btn-outline">Get Started Today</a>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
     <footer style="background-color: var(--dark-color); color: var(--light-text); padding: 40px 0;">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-          <div>
-            <div class="logo">
-              <a href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo" />
-                <span>GoEco</span>
-              </a>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div>
+                    <div class="logo">
+                        <a href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="GoEco Logo">
+                            <span>GoEco</span>
+                        </a>
+                    </div>
+                    <p style="margin-top: 20px;">
+                        Empowering sustainable energy choices through data-driven recommendations.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                        <li><a href="{{ url_for('team') }}">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px;">Connect With Us</h3>
+                    <div style="display: flex; gap: 15px; font-size: 24px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
             </div>
-            <p style="margin-top: 20px;">
-              Empowering sustainable energy choices through data-driven recommendations.
-            </p>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 20px;">Quick Links</h3>
-            <ul style="display: flex; flex-direction: column; gap: 10px;">
-              <li><a href="{{ url_for('index') }}">Home</a></li>
-              <li><a href="{{ url_for('about') }}">About</a></li>
-              <li><a href="{{ url_for('blog') }}">Blog</a></li>
-              <li><a href="{{ url_for('team') }}">Team</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 20px;">Connect With Us</h3>
-            <div style="display: flex; gap: 15px; font-size: 24px;">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
+            <div style="margin-top: 40px; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2025 GoEco. All rights reserved.</p>
             </div>
-          </div>
         </div>
-        <div style="margin-top: 40px; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-          <p>&copy; 2025 GoEco. All rights reserved.</p>
-        </div>
-      </div>
     </footer>
-  </body>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </html>
