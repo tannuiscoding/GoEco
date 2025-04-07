@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoEco - About Us</title>
+    <title>GoEco - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive-fixes.css') }}">
 </head>
 <body>
     <header>
@@ -38,8 +39,8 @@
                 <h1>Powering a Sustainable Future with Smart Energy Choices</h1>
                 <p>GoEco helps you make informed decisions about renewable energy sources based on your location and real-time weather conditions.</p>
                 <div class="hero-buttons">
-                    <a href="{{ url_for('index') }}" class="btn">Try Our Tool</a>
-                    <a href="#mission" class="btn btn-outline">Learn More</a>
+                    <a href="{{ url_for('service') }}" class="btn">Try Our Tool</a>
+                    <a href="{{ url_for('blog') }}" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
         </div>
@@ -454,5 +455,8 @@
     </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/mobile-menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/responsive-enhancements.js') }}"></script>
 </body>
 </html>
+

@@ -6,6 +6,7 @@
     <title>GoEco - Energy Partners</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive-fixes.css') }}">
   </head>
   <body>
     <header>
@@ -198,5 +199,8 @@
         </div>
     </div>
 </footer>
+  <script src="{{ url_for('static', filename='scripts/mobile-menu.js') }}"></script>
+  <script src="{{ url_for('static', filename='scripts/responsive-enhancements.js') }}"></script>
   </body>
 </html>
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoEco-About</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/responsive-fixes.css') }}">
   </head>
   <body>
     <header>
@@ -210,5 +211,8 @@
             </div>
         </div>
     </footer>
-  </body>
+  <script src="{{ url_for('static', filename='scripts/mobile-menu.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/responsive-enhancements.js') }}"></script>
+</body>
 </html>
+
