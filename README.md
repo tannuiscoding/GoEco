@@ -18,6 +18,7 @@
 - 💰 Calculates **government incentives**, **carbon reduction**, **installation cost**, **money saved**, and **return on investment (ROI)**.
 - 🛍 Intuitive UI to input city, sunshine hours, proximity to water sources, and geothermal activity.
 
+
 ---
 
 ## 🛠 Tech Stack
